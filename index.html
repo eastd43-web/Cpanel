@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Horizon Bank - Welcome</title>
+    <!-- FDIC Mandatory Font Style (Source Sans Pro or similar legible sans-serif) -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #008080;
+            --text-dark: #333333;
+            --bg-light: #f4f7f9;
+            --fdic-navy: #003366; /* Standard FDIC Sign Navy color */
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* ----------------------------------------------------
+           FDIC CONTINUOUS DIGITAL SIGN (Top Banner Option)
+           Per 12 CFR Part 328: Must be clear, continuous, 
+           and conspicuous on homepage and login page.
+        ---------------------------------------------------- */
+        .fdic-digital-banner {
+            background-color: var(--fdic-navy);
+            color: #ffffff;
+            padding: 8px 16px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .fdic-symbol {
+            font-weight: 700;
+            font-size: 15px;
+            border: 1px solid #ffffff;
+            padding: 1px 4px;
+            margin-right: 6px;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Main Hero Split Layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: calc(100vh - 120px);
+        }
+
+        @media (min-width: 768px) {
+            .main-container {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        /* Marketing & Info Side */
+        .hero-side {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 60px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-side h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-side p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        /* Secure Login Side */
+        .login-side {
+            background-color: #ffffff;
+            padding: 60px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .login-card h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn-login {
+            display: block;
+            width: 100%;
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-login:hover {
+            background-color: #006666;
+        }
+
+        /* ----------------------------------------------------
+           NON-DEPOSIT PRODUCT DISCLOSURES (NDIP Requirement)
+           Per Part 328: Must explicitly state and clearly 
+           separate non-insured offerings from deposits.
+        ---------------------------------------------------- */
+        .ndip-disclosure-block {
+            margin-top: 40px;
+            padding: 15px;
+            border-left: 4px solid #d9534f;
+            background-color: #fff5f5;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .ndip-title {
+            font-weight: 700;
+            color: #c9302c;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .ndip-text {
+            font-size: 13px;
+            color: #555555;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222222;
+            color: #bbbbbb;
+            padding: 30px 5%;
+            font-size: 13px;
+            text-align: center;
+            border-top: 1px solid #333333;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MANDATORY FDIC DIGITAL SIGN: High visibility layout position -->
+    <div class="fdic-digital-banner" role="img" aria-label="FDIC Insured Sign">
+        <span class="fdic-symbol">FDIC</span> Member FDIC
+    </div>
+
+    <header>
+        <div class="logo">Apex Horizon Bank</div>
+        <nav style="font-size: 15px; font-weight: 600;">
+            <span style="color: var(--secondary-color);">🔒 Secure Session</span>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <!-- Visual & Value Prop Side -->
+        <section class="hero-side">
+            <h1>Banking built for your future.</h1>
+            <p>Manage your deposit accounts safely, confidently, and securely with our intuitive online tools.</p>
+        </section>
+
+        <!-- Access Interface Side -->
+        <section class="login-side">
+            <div class="login-card">
+                <h2>Account Login</h2>
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" autocomplete="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" autocomplete="current-password" required>
+                    </div>
+                    <button type="submit" class="btn-login">Sign In</button>
+                </form>
+
+                <!-- MANDATORY DISCLOSURE SEPARATION: Explicitly isolated from standard deposit pathways -->
+                <div class="ndip-disclosure-block">
+                    <div class="ndip-title">Investment & Insurance Products</div>
+                    <p class="ndip-text">
+                        <strong>Are Not FDIC Insured</strong> • <strong>Are Not Bank Deposits</strong> • <strong>May Lose Value</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </div>
+        <p>&copy; 2026 Apex Horizon Bank. All rights reserved. Equal Housing Lender 🏠</p>
+    </footer>
+
+</body>
+</html>
